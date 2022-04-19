@@ -1,0 +1,33 @@
+﻿@model IDictionary<string, int> 
+@{
+    ViewData["Title"] = "NewsPerCategory";
+}
+
+<h1>News Count Per Category</h1>
+<div class="text-center align-items-center">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>
+                    Category
+                </th>
+                <th>News Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (KeyValuePair<string, int> item in Model)
+            {
+                <tr class="table-secondary">
+                    <td>
+                        @item.Key
+                    </td>
+                    <td>
+                        @item.Value
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>
+

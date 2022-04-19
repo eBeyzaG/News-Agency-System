@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "CountNewsPerDate";
+}
+
+<h1>News Per Date</h1>
+
+<form asp-action="CountNewsPerDate">
+    <div class="form-group mb-3">
+        <label class="control-label">Date</label>
+        <input type="date" name="date" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <input type="submit" value="Search" class="btn btn-primary" />
+    </div>
+</form>
+
+@if (ViewBag.dateNews != null) { 
+        <p>Found @ViewBag.dateNews.Count news for this day.</p>
+    foreach (var n in ViewBag.dateNews) { 
+<p><a asp-action="Details" asp-route-id="@n.Id">@n.Title</a> </p>
+    }
+}
+

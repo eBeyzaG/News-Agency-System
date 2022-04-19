@@ -1,0 +1,35 @@
+﻿@model IEnumerable<NewsWebsite.Models.News>
+@{
+    ViewData["Title"] = "FindContentByTitle";
+}
+
+<h1 class="bg-secondary text-white">Find Content By Title</h1>
+<h5>Select the title of the newes that you want to see the content of.</h5>
+@if (ViewData["content"] != null)
+{
+
+    <h2>Content</h2>
+    <p>@ViewData["content"]</p>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>News Title</th>
+        </tr>
+
+    </thead>
+    <tbody>
+
+        @foreach (var n in Model)
+        {
+            <tr>
+                <td><a asp-action="FindContentByTitle" asp-route-title="@n.Title">@n.Title</a></td>
+
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+

@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center mb-3 row">
+    <h1 class="display-4">Welcome</h1>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" asp-controller="Home" asp-action="ListByCategory">List News By Category</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="Home" asp-action="AgencyByReporter">Find Reporter's Agency</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="News" asp-action="FindContentByTitle">Find News by Title</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="Categories" asp-action="NewsPerCategory">News Count Per Category</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="News" asp-action="SearchNewsByKeyword">Search News by Keyword</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="News" asp-action="CountNewsPerDate">Search News by Date</a>
+
+    <a class="btn btn-secondary btn-lg mb-3" role="button" aria-disabled="true" asp-controller="Agencies" asp-action="getEstYearWithId">Find Agency Establishment Year by Agency ID</a>
+
+
+    
+</div>

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<NewsWebsite.Models.Category>
+
+@{
+    ViewData["Title"] = "ListByCategory";
+}
+
+<h1 class="bg-secondary text-white">List News By Category</h1>
+
+
+
+<ul style="text-align:left; display:inline-block">
+    @foreach (var category in Model) {
+        <li><b>@category.Name</b></li>
+        <ul>
+            @foreach (var news in category.News) { 
+                <li><a asp-controller="News" asp-action="Details" asp-route-id="@news.Id">@news.Title</a></li>
+            }
+        </ul>
+    }
+</ul>

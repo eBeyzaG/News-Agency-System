@@ -1,0 +1,31 @@
+﻿@model IEnumerable<NewsWebsite.Models.Reporter>
+@{
+    ViewData["Title"] = "AgencyByReporter";
+}
+
+<head>
+
+</head>
+<body>
+    <h1 class="bg-secondary text-white">Find Agency by Reporter</h1>
+    <br />
+    <h5>Choose the name and last name of the reporter you want to find the agency of.</h5>
+    <br />
+
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+            Reporters
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            @foreach (var reporter in Model) {
+              <li><a class="dropdown-item" asp-controller="Reporters" asp-action="FindAgencyNameByFullName" asp-route-firstname="@reporter.Name" asp-route-lastname="@reporter.Surname" >@reporter.Name @reporter.Surname </a></li>
+
+             }
+        </ul>
+    </div>
+
+    
+</body>
+
+
+

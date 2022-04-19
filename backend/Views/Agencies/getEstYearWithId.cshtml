@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "getEstYearWithId";
+}
+
+<h1>Establishment Year by ID</h1>
+<p>Finds establishment year with stored procedures.</p>
+
+<form asp-action="getEstYearWithId">
+    <div class="form-group mb-3">
+        <label class="control-label">Agency ID</label>
+        <input name="id" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <input type="submit" value="Find Establishment Year" class="btn btn-primary" />
+    </div>
+</form>
+
+@if (@ViewData["estYear"] != null)
+{
+    @if (@ViewData["estYear"].Equals("No agency with given ID."))
+    {
+        <p><b>@ViewData["estYear"]</b></p>
+    }
+    else
+    {
+        <p>This agency was established in year <b>@ViewData["estYear"]</b>.</p>
+    }
+
+
+}
+

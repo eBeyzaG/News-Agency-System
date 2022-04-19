@@ -1,0 +1,55 @@
+﻿@model IEnumerable<News>
+@{
+    ViewData["Title"] = "SearchNewsByKeyword";
+}
+
+<h1 class="bg-secondary text-white">Search News By Keyword</h1>
+<br />
+<h5>Search for a keyword in all news.</h5>
+
+<div class="mb-3">
+
+
+    <form asp-action="SearchNewsByKeyword">
+        <div class="form-group mb-3">
+            <label class="control-label"></label>
+            <input name="keyword" class="form-control" />
+        </div>
+        <div class="form-group mb-3">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+
+    </form>
+
+
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var n in Model)
+                {
+                    <tr>
+                        <td>@n.Title</td>
+                        <td>@n.Content</td>
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+
+
+
+</div>
+
+
+
+
